@@ -1,0 +1,9 @@
+scalar DateTime
+
+schema {
+    query:Query
+}
+
+type Query{
+
+}

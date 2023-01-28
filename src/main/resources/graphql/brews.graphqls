@@ -1,0 +1,19 @@
+type Brews{
+    id:ID!
+    title:String
+    description:String
+    coffee:Int
+    water:Int
+    ratio:Int
+    time:Int
+    grindSize:String
+    preparations:String
+    steps:String
+    thumbnail:String
+    createdAt:DateTime
+}
+
+extend type Query{
+    getAllBrews:[Brews]
+    getBrew(brewId:ID!):Brews
+}

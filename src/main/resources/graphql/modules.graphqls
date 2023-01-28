@@ -1,0 +1,13 @@
+type Modules{
+    id:ID!
+    course:Courses
+    title:String
+    thumbnail:String
+    contents:[Contents]
+    createdAt:DateTime
+}
+
+extend type Query{
+    getAllModulesForCourse(courseId:ID!):[Modules]
+    getModule(moduleId:ID!):Modules
+}

@@ -1,0 +1,14 @@
+type Forums{
+    id:ID!
+    author:Accounts
+    title:String
+    body:String
+    thumbnail:String
+    createdAt:DateTime
+}
+
+extend type Query{
+    getAllForums:[Forums]
+    getForum(forumId:ID!):Forums
+    getAllForumsForAccount(accountId:ID!):[Forums]
+}

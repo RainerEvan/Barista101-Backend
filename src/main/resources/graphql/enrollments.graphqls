@@ -1,0 +1,15 @@
+type Enrollments{
+    id:ID!
+    account:Accounts
+    course:Courses
+    startDate:DateTime
+    endDate:DateTime
+    moduleStatus:String
+    progress:Float
+}
+
+extend type Query{
+    getAllEnrollmentsForAccount(accountId:ID!):[Enrollments]
+    getEnrollmentForCourseAndAccount(courseId:ID!,accountId:ID!):Enrollments
+    getEnrollment(enrollmentId:ID!):Enrollments
+}

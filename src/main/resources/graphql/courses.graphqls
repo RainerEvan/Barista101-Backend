@@ -1,0 +1,13 @@
+type Courses{
+    id:ID!
+    title:String
+    description:String
+    thumbnail:String
+    modules:Int
+    createdAt:DateTime
+}
+
+extend type Query{
+    getAllCourses:[Courses]
+    getCourse(courseId:ID!):Courses
+}

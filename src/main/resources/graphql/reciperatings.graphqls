@@ -1,0 +1,12 @@
+type RecipeRatings{
+    id:ID!
+    recipe:Recipes
+    author:Accounts
+    rating:Int
+    body:String
+    createdAt:DateTime
+}
+
+extend type Query{
+    getAllRatingsForRecipe(recipeId:ID!):[RecipeRatings]
+}

@@ -1,0 +1,12 @@
+type Notifications{
+    id:ID!
+    receiver:Accounts
+    body:String
+    data:String
+    createdAt:DateTime
+}
+
+extend type Query{
+    getAllNotificationsForAccount(accountId:ID!):[Notifications]
+    getNotification(notificationId:ID!):Notifications
+}

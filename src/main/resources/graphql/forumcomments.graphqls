@@ -1,0 +1,11 @@
+type ForumComments{
+    id:ID!
+    forum:Forums
+    author:Accounts
+    body:String
+    createdAt:DateTime
+}
+
+extend type Query{
+    getAllCommentsForForum(forumId:ID!):[ForumComments]
+}

@@ -1,0 +1,14 @@
+type Contents{
+    id:ID!
+    module:Modules
+    title:String
+    body:String
+    thumbnail:String
+    createdAt:DateTime
+}
+
+
+extend type Query{
+    getAllContentsForModule(moduleId:ID!):[Contents]
+    getContent(contentId:ID!):Contents
+}

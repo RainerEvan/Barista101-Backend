@@ -1,0 +1,9 @@
+type RecipeCategories{
+    id:ID!
+    name:String
+}
+
+extend type Query{
+    getAllRecipeCategories:[RecipeCategories]
+    getRecipeCategory(recipeCategoryId:ID!):RecipeCategories
+}
