@@ -2,6 +2,7 @@ package com.project.barista101.config;
 
 import java.util.Arrays;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -10,12 +11,16 @@ import org.springframework.web.filter.CorsFilter;
 
 @Configuration
 public class CorsConfig {
+
+	@Value("${clientUrl}")
+    private String clientUrl;
+	
     @Bean
 	public CorsFilter corsFilter() {
 		UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
 		corsConfiguration.setAllowCredentials(true);
-		corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200","http://127.0.0.1:4200"));
+		corsConfiguration.setAllowedOrigins(Arrays.asList(clientUrl));
 		corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
 				"Accept", "Authorization", "Origin, Accept", "X-Requested-With",
 				"Access-Control-Request-Method", "Access-Control-Request-Headers"));
